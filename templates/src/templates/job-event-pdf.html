@@ -1,0 +1,159 @@
+---
+title: '___title__'
+preheader: '___preheader__'
+bodyClass: bg-white
+---
+
+<extends src="src/layouts/pdf.html">
+  <block name="template">
+    <table class="min-w-full" style="background-color: #eaecf9">
+      <tbody>
+        <tr>
+          <td class="pt-5 text-center">
+            <a href="https://nkinstallations.com" target="_blank">
+              <img
+                alt="NK Installations"
+                class="w-96 border-0 inline mx-auto"
+                src="https://nkinstallations.com/wp-content/uploads/2024/01/NK-Installations.png"
+              />
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pt-2 pb-5 text-center">
+            <h1 class="text-2xl font-bold mb-4 text-black">Job Event Form</h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="mt-5 min-w-full border-collapse border border-gray-300 mb-6">
+      <tbody>
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold" style="width: 400px">Supervisor Name</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___supervisorName__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Customer Name</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___customerName__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Job Event Type</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___jobEventType__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Busted Job?</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___bustedJob__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Detailer name</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___detailerName__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Crew Number</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___crewNumber__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Project Number</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___projectNumber__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold"># of self leveler / plani-patch bags</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">
+            ___#if numberOfBags__ ___numberOfBags__ ___else__ <em>Not provided</em> ___/if__
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">UHS branch</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___uhsBranch__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">PO/PR Numbers</td>
+        </tr>
+
+        <tr>
+          <td colspan="2" class="pl-10 pr-2 py-2">
+            <table class="w-full">
+              <thead>
+                <tr>
+                  <td class="border border-gray-300 p-2 font-semibold">PO/PR Number</td>
+                  <td class="border border-gray-300 p-2 font-semibold">Amount</td>
+                  <td class="border border-gray-300 p-2 font-semibold">Retail or UHS?</td>
+                  <td class="border border-gray-300 p-2 font-semibold">PO/PR Reason</td>
+                </tr>
+              </thead>
+              <tbody>
+                ___#each jobEventPosArray__
+                <tr>
+                  <td class="border border-gray-300 p-2">___poNumber__</td>
+                  <td class="border border-gray-300 p-2">$___amount__</td>
+                  <td class="border border-gray-300 p-2">___retailOrUhs__</td>
+                  <td class="border border-gray-300 p-2">___reason__</td>
+                </tr>
+                ___/each__
+              </tbody>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 px-10 py-2 font-semibold" colspan="2">Job Event Description</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 px-10 py-2" colspan="2">___jobEventDescription__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Material problem?</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___materialProblem__</td>
+        </tr>
+
+        ___#if itemNumber__
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Item number</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___itemNumber__</td>
+        </tr>
+        ___/if__ ___#if dyeLotNumber__
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Dye lot number</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___dyeLotNumber__</td>
+        </tr>
+        ___/if__ ___#if productName__
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Product name</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___productName__</td>
+        </tr>
+        ___/if__
+      </tbody>
+    </table>
+
+    <table>
+      <tbody>
+        <tr>
+          <td class="px-10 py-2">
+            <h2 class="text-xl font-bold my-4">Inspection Pictures</h2>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="p-10">
+            ___#each imageUrls__
+            <img src="___this__" class="max-w-full" />
+            ___/each__
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </block>
+</extends>

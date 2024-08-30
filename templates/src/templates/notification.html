@@ -1,0 +1,22 @@
+---
+title: '___title__'
+preheader: '___subtitle__'
+bodyClass: bg-gray-100
+---
+
+<extends src="src/layouts/main.html">
+  <block name="template">
+    <component
+      locals='{"center": "false", "title": "___title__", "subtitle": "", "pretitle": "___pretitle__", "hideContent": "false"}'
+      src="src/components/card.html"
+    >
+      <table class="w-full">
+        <tr>
+          <td>
+            <p class="text-muted">___subtitle__</p>
+          </td>
+        </tr>
+      </table>
+    </component>
+  </block>
+</extends>

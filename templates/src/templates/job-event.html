@@ -1,0 +1,88 @@
+---
+title: '___title__'
+preheader: '___preheader__'
+bodyClass: bg-gray-100
+---
+
+<extends src="src/layouts/main.html">
+  <block name="template">
+    <component
+      locals='{"center": "", "title": "___headerTitle__", "subtitle": "___subtitle__", "pretitle": "___pretitle__", "hideContent": "false", "type": ""}'
+      src="src/components/card.html"
+    >
+      <table class="w-full">
+        <tr>
+          <td>
+            <pre class="p-4 rounded" style="color: #666666; background-color: #f9fafc">
+<strong>Date created:</strong>  ___dateCreated__
+
+<strong>Supervisor name:</strong>  ___supervisorName__
+
+<strong>Customer name:</strong>  ___customerName__
+
+<strong>Job event type:</strong> ___jobEventType__
+
+<strong>Busted job?:</strong>  ___bustedJob__
+
+<strong>Detailer name:</strong> ___#if detailerName__ ___detailerName__ ___else__ <em>Not provided</em> ___/if__
+
+<strong>Crew number:</strong> ___crewNumber__
+
+<strong>Project number:</strong> ___projectNumber__
+
+<strong># of self leveler / plani-patch bags:</strong> ___#if numberOfBags__ ___numberOfBags__ ___else__ <em>Not provided</em> ___/if__
+
+<strong>UHS branch:</strong> ___uhsBranch__
+            </pre>
+
+            <pre class="p-4 rounded" style="color: #666666; background-color: #f9fafc">
+<strong>PO/PR Numbers</strong>
+___#each jobEventPosArray__
+<br />
+<strong>Po number:</strong> ___poNumber__
+<strong>Amount:</strong> $___amount__
+<strong>Retail or UHS:</strong> ___retailOrUhs__
+<strong>Reason:</strong> ___reason__
+___/each__
+            </pre>
+
+            <pre class="p-4 rounded" style="color: #666666; background-color: #f9fafc">
+<strong>Job event description:</strong>
+
+___jobEventDescription__
+            </pre>
+
+            <pre class="p-4 rounded" style="color: #666666; background-color: #f9fafc">
+<strong>Material problem:</strong> ___materialProblem__
+
+___#if itemNumber__<strong>Item number:</strong> ___itemNumber__ ___/if__ ___#if dyeLotNumber__ <br /><strong>Dye lot number:</strong> ___dyeLotNumber__ ___/if__ ___#if productName__ <br /><strong>Product name:</strong> ___productName__ ___/if__
+            </pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p class="text-muted">You can view the full report online in the NK Tools:</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pt-2 pb-6">
+            <a href="___siteUrl__/job-events/edit/___id__" rel="noreferrer noopener" target="_blank">
+              <component src="src/components/button.html">View report</component>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p class="text-muted text-sm">
+              By clicking the link above, you will be redirected to the NK Tools application to view, modify, approve,
+              or reject the report detailed above.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </component>
+  </block>
+</extends>

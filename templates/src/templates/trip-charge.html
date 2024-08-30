@@ -1,0 +1,63 @@
+---
+title: '___title__'
+preheader: '___preheader__'
+bodyClass: bg-gray-100
+---
+
+<extends src="src/layouts/main.html">
+  <block name="template">
+    <component
+      locals='{"center": "", "title": "___headerTitle__", "subtitle": "___subtitle__", "pretitle": "___pretitle__", "hideContent": "false", "type": ""}'
+      src="src/components/card.html"
+    >
+      <table class="w-full">
+        <tr>
+          <td>
+            <pre class="p-4 rounded" style="color: #666666; background-color: #f9fafc">
+<strong>Date created:</strong>  ___dateCreated__
+
+<strong>Crew number:</strong> ___crewNumber__
+
+<strong>Project number:</strong> ___projectNumber__
+
+<strong>Customer name:</strong>  ___customerName__
+
+<strong>Date of request:</strong> ___dateOfRequest__
+
+<strong>Drive time:</strong> ___#if driveTime__ ___driveTime__ ___else__ <em>Not provided</em> ___/if__
+            </pre>
+
+            <pre class="p-4 rounded" style="color: #666666; background-color: #f9fafc">
+<strong>Description:</strong>
+
+___#if description__ ___description__ ___else__ <em>Not provided</em> ___/if__
+            </pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p class="text-muted">You can view the full report online in the NK Tools:</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pt-2 pb-6">
+            <a href="___siteUrl__/trip-charges/edit/___id__" rel="noreferrer noopener" target="_blank">
+              <component src="src/components/button.html">View report</component>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p class="text-muted text-sm">
+              By clicking the link above, you will be redirected to the NK Tools application to view the report detailed
+              above.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </component>
+  </block>
+</extends>

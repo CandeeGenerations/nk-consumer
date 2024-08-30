@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "maizzle build production",
+    "dev": "maizzle serve"
+  },
+  "dependencies": {
+    "@maizzle/cli": "^1.5.9",
+    "@maizzle/framework": "^4.8.9"
+  }
+}

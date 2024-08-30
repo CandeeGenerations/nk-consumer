@@ -1,0 +1,4 @@
+{
+  "src/**/*.+(js|md|ts|tsx|css|sass|less|graphql|yml|yaml|json|vue)": "prettier --write",
+  "src/**/*.+(ts|tsx)": ["eslint", "tsc-files --noEmit"]
+}

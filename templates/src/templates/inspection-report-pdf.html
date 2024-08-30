@@ -1,0 +1,173 @@
+---
+title: '___title__'
+preheader: '___preheader__'
+bodyClass: bg-white
+---
+
+<extends src="src/layouts/pdf.html">
+  <block name="template">
+    <table class="min-w-full" style="background-color: #eaecf9">
+      <tbody>
+        <tr>
+          <td class="pt-5 text-center">
+            <a href="https://nkinstallations.com" target="_blank">
+              <img
+                alt="NK Installations"
+                class="w-96 border-0 inline mx-auto"
+                src="https://nkinstallations.com/wp-content/uploads/2024/01/NK-Installations.png"
+              />
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="pt-2 pb-5 text-center">
+            <h1 class="text-2xl font-bold mb-4 text-black">Inspection Report Form</h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="mt-5 min-w-full border-collapse border border-gray-300 mb-6">
+      <tbody>
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold" style="width: 400px">
+            Inspector Name (Tec: full name OR<br />installer: first name & crew number<br />in last name box)
+          </td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___inspectorName__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Customer Name</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___customerName__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Project Number</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___projectNumber__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Original Installer Name</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___originalInstallerName__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Original Installer Crew Number</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">
+            ___#if originalInstallerCrewNumber__ ___originalInstallerCrewNumber__ ___else__
+            <em>Not provided</em> ___/if__
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Original Install Date</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">
+            ___#if originalInstallDate__ ___originalInstallDate__ ___else__ <em>Not provided</em> ___/if__
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Inspection / Repair Date</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___inspectionRepairDate__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Hours to Fix</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___hoursToFix__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Description of the Problem</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___problemDescription__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Description of the Work Performed Today</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___workPerformedTodayDescription__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Description of the Future Solution</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___futureSolutionDescription__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Materials Needed for Future Visit</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___materialsNeededForFutureVisit__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Installer Error?</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___installerError__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Manufacturer Problem?</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___manufacturerProblem__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Lowes Problem?</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___lowesProblem__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Future Visit Needed?</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___futureVisitNeeded__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Were Materials Purchased?</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___materialsPurchased__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Back Charge Materials?</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___backChargeMaterials__</td>
+        </tr>
+
+        <tr>
+          <td class="border border-gray-300 pl-10 pr-2 py-2 font-semibold">Customer Concern/Request?</td>
+          <td class="border border-gray-300 pr-10 pl-2 py-2">___customerConcernRequest__</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <tbody>
+        <tr>
+          <td class="px-10 py-2">
+            <h2 class="text-xl font-bold my-4">Inspection Pictures</h2>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="p-10">
+            ___#each pictureUrls__
+            <img src="___this__" class="max-w-full" />
+            ___/each__
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <tbody>
+        <tr>
+          <td class="px-10 py-2">
+            <h2 class="text-xl font-bold my-4">Receipts</h2>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="px-10">
+            ___#each receiptUrls__
+            <img src="___this__" class="max-w-full" />
+            ___/each__
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </block>
+</extends>

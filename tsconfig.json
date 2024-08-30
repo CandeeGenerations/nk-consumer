@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "nodenext",
+    "target": "es2021",
+    "lib": ["esnext"],
+    "sourceMap": true,
+    "allowJs": false,
+    "moduleResolution": "nodenext",
+    "rootDirs": ["src"],
+    "baseUrl": "src",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test", "*test.ts"]
+}
