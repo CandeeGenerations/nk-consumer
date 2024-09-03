@@ -1,4 +1,5 @@
-import getClient from './functions/getClient.js'
+import deleteObject from './functions/deleteObject.js'
+import getObject from './functions/getObject.js'
 import listObjects from './functions/listObjects.js'
 
-export {getClient, listObjects}
+export {deleteObject, getObject, listObjects}

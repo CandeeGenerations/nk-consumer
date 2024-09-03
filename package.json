@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "index.js",
   "type": "module",
-  "packageManager": "yarn@4.4.0",
+  "packageManager": "yarn@4.4.1",
   "scripts": {
     "build": "rm -rf dist && NODE_ENV=production tsc -p tsconfig.build.json",
     "start": "doppler run --command='NODE_ENV=development tsc-watch -p tsconfig.build.json --onSuccess \"node dist/index.js\"'",

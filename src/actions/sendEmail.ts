@@ -1,23 +1,14 @@
-import {GetObjectCommand, S3Client} from '@aws-sdk/client-s3'
-import {SendRawEmailCommand, SESClient} from '@aws-sdk/client-ses'
 import dayjs from 'dayjs'
 import fs from 'fs'
 import handlebars from 'handlebars'
-import lodash from 'lodash'
-import {createMimeMessage, Mailbox} from 'mimetext'
+import uniq from 'lodash/uniq.js'
 import {Buffer} from 'node:buffer'
 import path from 'path'
 import puppeteer from 'puppeteer'
 import config from '../common/config.js'
-import {
-  DATE_FORMAT,
-  DATE_TIME_FORMAT,
-  OVERRIDE_EMAIL,
-  PDF_OPTIONS,
-  PUPPETEER_OPTIONS,
-  TEMPLATE_LOC,
-} from '../common/constants.js'
-import {logError, logInfo} from '../common/logger.js'
+import {DATE_FORMAT, DATE_TIME_FORMAT, PDF_OPTIONS, PUPPETEER_OPTIONS, TEMPLATE_LOC} from '../common/constants.js'
+import {sendEmail} from '../libraries/email/index.js'
+import * as storage from '../libraries/storage/index.js'
 import {
   AnyEmail,
   IInspectionReportEmail,
@@ -33,15 +24,14 @@ import {
 } from '../types/email.js'
 
 const {
-  worker: {defaultFromEmail, defaultFromName, siteUrl, overrideSendList},
-  aws: {region},
+  email: {defaultFromEmail, defaultFromName, siteUrl},
 } = config
 
 // #region Functions
 const compileEmail = (template: string) =>
   handlebars.compile(fs.readFileSync(path.join(path.resolve(), TEMPLATE_LOC, `${template}.hbs`), 'utf8'))
 
-const getReplyToList = (replyTo: string | undefined): string[] => lodash.uniq(replyTo?.split(',').map(x => x) || [])
+const getReplyToList = (replyTo: string | undefined): string[] => uniq(replyTo?.split(',').map(x => x) || [])
 
 const formatDates = email => ({
   ...email,
@@ -51,55 +41,7 @@ const formatDates = email => ({
   dateOfRequest: email.dateOfRequest ? dayjs(email.dateOfRequest).format(DATE_FORMAT) : undefined,
 })
 
-// MARK: Send Email
-const sendEmail = async data => {
-  const ses = new SESClient({region})
-
-  const toList =
-    overrideSendList === 'true'
-      ? [OVERRIDE_EMAIL]
-      : (lodash.uniq(data.to?.split(',').filter(x => x !== '')) as string[])
-
-  if (toList.length === 0) {
-    logError('No one to send email to')
-    return
-  }
-
-  logInfo(`Sending email to ${toList.map(x => x).join(',')}...`)
-
-  const message = createMimeMessage()
-
-  message.setSender(data.from ? `${data.from.name} <${data.from.email}>` : '')
-  message.setTo(toList)
-  message.setSubject(data.subject)
-  message.addMessage({
-    contentType: 'text/html',
-    data: data.html,
-  })
-
-  if (data.attachments) {
-    data.attachments.forEach(x => message.addAttachment(x))
-  }
-
-  const command = new SendRawEmailCommand({
-    Destinations: ((message.getRecipients({type: 'To'}) || []) as Mailbox[]).map(mailbox => mailbox.addr),
-    RawMessage: {
-      Data: Buffer.from(message.asRaw(), 'utf8'),
-    },
-    Source: message.getSender()?.addr,
-  })
-
-  try {
-    await ses.send(command)
-
-    logInfo(`Email sent to ${toList.map(x => x).join(',')} from ${data.from?.email || ''}: [subject] ${data.subject}`)
-  } catch (error) {
-    logError('Error sending email', error)
-  }
-}
-// #endregion
-
-// #region
+// #region Emails
 // MARK: Send test email
 const sendTestEmail = async ({to}: {to: string}) => {
   await sendEmail({
@@ -285,26 +227,14 @@ const handlers = {
 // #endregion
 
 // MARK: Handle function
-const handle = async (message: SendEmailMessage) => {
-  const s3Client = new S3Client({region: config.aws.region})
-  const command = new GetObjectCommand({
-    Bucket: config.aws.sqsBucket,
-    Key: message.filename,
-  })
-
-  const response = await s3Client.send(command)
-
-  if (!response.Body) {
-    logError(`Cannot send email; no body found in message: (${message.filename})`)
-    return
-  }
-
-  const contents = await response.Body.transformToString()
+const handle = async ({filename, emailType}: SendEmailMessage) => {
+  const response = await storage.getObject({bucket: config.aws.sqsBucket, filename: filename})
+  const contents = await response.transformToString()
   const emailMessage: AnyEmail = JSON.parse(contents)
 
-  await handlers[message.emailType](emailMessage)
+  await handlers[emailType](emailMessage)
 
-  return message.emailType
+  return emailType
 }
 
 export default {handle}

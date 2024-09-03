@@ -1,7 +1,30 @@
 import config from '../../../common/config.js'
+import {logInfo} from '../../../common/logger.js'
+import * as storage from '../../storage/index.js'
 import getClient from './getClient.js'
 
-const convertImageJob = async (objectKey: string) => {
+const waitForSeconds = async (seconds: number) => await new Promise(resolve => setTimeout(resolve, seconds * 1000))
+
+const waitForJobByPolling = async (jobId: string, filename: string) => {
+  await waitForSeconds(1)
+  const client = getClient()
+  const jobGetResponse = await client.get(`/process/jobs/${jobId}`)
+
+  const job = jobGetResponse.data
+
+  if (job.status === 'completed') {
+    await storage.deleteObject({bucket: config.aws.originalImagesBucket, filename})
+
+    const exportTask = job.tasks.find(t => t.name === 'export')
+    logInfo(`Completed convert job`, exportTask.result.url)
+  } else if (job.status === 'failed') {
+    throw new Error('Job failed')
+  } else {
+    waitForJobByPolling(job.id, filename)
+  }
+}
+
+const convertImage = async (objectKey: string) => {
   const client = getClient()
   const {originalImagesBucket, convertedImagesBucket, region, accessKeyId, secretAccessKey} = config.aws
 
@@ -42,7 +65,8 @@ const convertImageJob = async (objectKey: string) => {
     },
   })
 
-  return response.data
+  const job = response.data
+  await waitForJobByPolling(job.id, objectKey)
 }
 
-export default convertImageJob
+export default convertImage

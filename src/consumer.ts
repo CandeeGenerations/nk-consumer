@@ -2,9 +2,10 @@ import {Consumer, ConsumerOptions} from 'sqs-consumer'
 import handlers from './actions/index.js'
 import config from './common/config.js'
 import {logError, logInfo} from './common/logger.js'
+import {S3Message} from './types/consumer.js'
 import {SendEmailMessage} from './types/email.js'
 
-type MessageType = SendEmailMessage // add more types here
+type MessageType = SendEmailMessage | S3Message // add more types here
 type HandlerFunctionType = {
   // eslint-disable-next-line no-unused-vars
   handle: (messageBody: MessageType) => Promise<string>
@@ -53,8 +54,7 @@ const handleMessage: ConsumerOptions['handleMessage'] = async message => {
 
     logInfo(`Message processed successfully: ${id}`)
   } catch (error) {
-    logError(`Failed to process message: ${logMessage}`)
-    logError(JSON.stringify(error))
+    throw new Error(`Failed to process message: ${error}`)
   }
 }
 
