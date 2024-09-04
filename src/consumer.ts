@@ -42,20 +42,16 @@ const handleMessage: ConsumerOptions['handleMessage'] = async message => {
     return
   }
 
-  try {
-    const handler: HandlerFunctionType = handlers[action]
+  const handler: HandlerFunctionType = handlers[action]
 
-    if (!handler) {
-      logError(`Cannot process message; no handler found for: (${action})`)
-      return
-    }
-
-    const id = await handler.handle(messageBody)
-
-    logInfo(`Message processed successfully: ${id}`)
-  } catch (error) {
-    throw new Error(`Failed to process message: ${error}`)
+  if (!handler) {
+    logError(`Cannot process message; no handler found for: (${action})`)
+    return
   }
+
+  const id = await handler.handle(messageBody)
+
+  logInfo(`Message processed successfully: ${id}`)
 }
 
 const consumer = Consumer.create({

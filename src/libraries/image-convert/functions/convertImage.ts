@@ -1,5 +1,5 @@
 import config from '../../../common/config.js'
-import {logInfo} from '../../../common/logger.js'
+import {logError, logInfo} from '../../../common/logger.js'
 import * as storage from '../../storage/index.js'
 import getClient from './getClient.js'
 
@@ -27,6 +27,13 @@ const waitForJobByPolling = async (jobId: string, filename: string) => {
 const convertImage = async (objectKey: string) => {
   const client = getClient()
   const {originalImagesBucket, convertedImagesBucket, region, accessKeyId, secretAccessKey} = config.aws
+
+  try {
+    await storage.getObject({bucket: originalImagesBucket, filename: objectKey})
+  } catch {
+    logError(`Cannot convert image; file not found in original bucket: (${objectKey})`)
+    return
+  }
 
   const filenameSplit = objectKey.split('.')
   const filename = filenameSplit.slice(0, -1).join('.')
