@@ -1,4 +1,5 @@
 {
-  "src/**/*.+(js|md|ts|tsx|css|sass|less|graphql|yml|yaml|json|vue)": "prettier --write",
-  "src/**/*.+(ts|tsx)": ["eslint", "tsc-files --noEmit"]
+  "src/**/*.+(js|md|ts|tsx|css|sass|less|yml|yaml|json|vue)": "prettier --write --ignore-unknown",
+  "src/**/*.+(ts|tsx)": ["eslint --fix"],
+  "package.json": ["sort-package-json"]
 }

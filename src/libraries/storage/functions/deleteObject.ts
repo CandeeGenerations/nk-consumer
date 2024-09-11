@@ -1,5 +1,6 @@
 import {DeleteObjectCommand} from '@aws-sdk/client-s3'
-import getClient from './getClient.js'
+
+import getClient from './getClient'
 
 const listObjects = async ({bucket, filename}: {bucket: string; filename: string}) => {
   const client = getClient()

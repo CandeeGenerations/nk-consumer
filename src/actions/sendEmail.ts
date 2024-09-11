@@ -1,14 +1,15 @@
 import dayjs from 'dayjs'
 import fs from 'fs'
 import handlebars from 'handlebars'
-import uniq from 'lodash/uniq.js'
+import uniq from 'lodash/uniq'
 import {Buffer} from 'node:buffer'
 import path from 'path'
 import puppeteer from 'puppeteer'
-import config from '../common/config.js'
-import {DATE_FORMAT, DATE_TIME_FORMAT, PDF_OPTIONS, PUPPETEER_OPTIONS, TEMPLATE_LOC} from '../common/constants.js'
-import {sendEmail} from '../libraries/email/index.js'
-import * as storage from '../libraries/storage/index.js'
+
+import config from '../common/config'
+import {DATE_FORMAT, DATE_TIME_FORMAT, PDF_OPTIONS, PUPPETEER_OPTIONS, TEMPLATE_LOC} from '../common/constants'
+import {sendEmail} from '../libraries/email'
+import * as storage from '../libraries/storage/index'
 import {
   AnyEmail,
   IInspectionReportEmail,
@@ -21,7 +22,7 @@ import {
   SendEmailMessage,
   TEST_EMAIL,
   TRIP_CHARGE_EMAIL,
-} from '../types/email.js'
+} from '../types/email'
 
 const {
   email: {defaultFromEmail, defaultFromName, siteUrl},
@@ -31,9 +32,9 @@ const {
 const compileEmail = (template: string) =>
   handlebars.compile(fs.readFileSync(path.join(path.resolve(), TEMPLATE_LOC, `${template}.hbs`), 'utf8'))
 
-const getReplyToList = (replyTo: string | undefined): string[] => uniq(replyTo?.split(',').map(x => x) || [])
+const getReplyToList = (replyTo: string | undefined): string[] => uniq(replyTo?.split(',').map((x) => x) || [])
 
-const formatDates = email => ({
+const formatDates = (email) => ({
   ...email,
   dateCreated: dayjs(email.dateCreated).format(DATE_TIME_FORMAT),
   originalInstallDate: email.originalInstallDate ? dayjs(email.originalInstallDate).format(DATE_FORMAT) : undefined,

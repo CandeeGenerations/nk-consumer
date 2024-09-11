@@ -1,5 +1,6 @@
 import {ListObjectsCommand} from '@aws-sdk/client-s3'
-import getClient from './getClient.js'
+
+import getClient from './getClient'
 
 const listObjects = async ({bucket}: {bucket: string}) => {
   const client = getClient()

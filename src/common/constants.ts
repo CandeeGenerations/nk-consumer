@@ -1,5 +1,6 @@
-import puppeteer from 'puppeteer'
-import config from './config.js'
+import {PDFOptions, PuppeteerLaunchOptions} from 'puppeteer'
+
+import config from './config'
 
 export const LOG_LEVELS = {
   ERROR: 'error',
@@ -11,11 +12,11 @@ export const TEMPLATE_LOC = 'templates/build_production'
 export const OVERRIDE_EMAIL = 'techsupport@nkinstallations.com'
 export const DATE_FORMAT = 'M/D/YYYY'
 export const DATE_TIME_FORMAT = `${DATE_FORMAT} h:mm A`
-export const PDF_OPTIONS: puppeteer.PDFOptions = {
+export const PDF_OPTIONS: PDFOptions = {
   format: 'A4',
   displayHeaderFooter: false,
 }
-export const PUPPETEER_OPTIONS: puppeteer.PuppeteerLaunchOptions = {
+export const PUPPETEER_OPTIONS: PuppeteerLaunchOptions = {
   headless: true,
   executablePath: config.env === 'production' ? '/usr/bin/google-chrome-stable' : undefined,
   args: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-dev-shm-usage'],

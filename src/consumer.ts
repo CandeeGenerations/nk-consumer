@@ -1,9 +1,10 @@
 import {Consumer, ConsumerOptions} from 'sqs-consumer'
-import handlers from './actions/index.js'
-import config from './common/config.js'
-import {logError, logInfo} from './common/logger.js'
-import {S3Message} from './types/consumer.js'
-import {SendEmailMessage} from './types/email.js'
+
+import handlers from './actions/index'
+import config from './common/config'
+import {logError, logInfo} from './common/logger'
+import {S3Message} from './types/consumer'
+import {SendEmailMessage} from './types/email'
 
 type MessageType = SendEmailMessage | S3Message // add more types here
 type HandlerFunctionType = {
@@ -11,7 +12,7 @@ type HandlerFunctionType = {
   handle: (messageBody: MessageType) => Promise<string>
 }
 
-const handleMessage: ConsumerOptions['handleMessage'] = async message => {
+const handleMessage: ConsumerOptions['handleMessage'] = async (message) => {
   const action = message.MessageAttributes?.['Action']?.StringValue
 
   if (!action) {
@@ -62,11 +63,11 @@ const consumer = Consumer.create({
   handleMessage,
 })
 
-consumer.on('error', err => {
+consumer.on('error', (err) => {
   logError(err.message)
 })
 
-consumer.on('processing_error', err => {
+consumer.on('processing_error', (err) => {
   logError(err.message)
 })
 

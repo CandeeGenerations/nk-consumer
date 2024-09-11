@@ -7,5 +7,10 @@
   "trailingComma": "all",
   "bracketSpacing": false,
   "bracketSameLine": false,
-  "arrowParens": "avoid"
+  "arrowParens": "always",
+  "quoteProps": "as-needed",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": ["^(.*)/tracer", "<THIRD_PARTY_MODULES>", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

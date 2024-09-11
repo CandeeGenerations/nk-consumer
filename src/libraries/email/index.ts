@@ -1,3 +1,3 @@
-import sendEmail from './functions/sendEmail.js'
+import sendEmail from './functions/sendEmail'
 
 export {sendEmail}

@@ -1,27 +1,18 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "module": "nodenext",
     "target": "es2021",
-    "lib": ["esnext"],
-    "sourceMap": true,
-    "allowJs": false,
-    "moduleResolution": "nodenext",
-    "rootDirs": ["src"],
-    "baseUrl": "src",
+    "module": "node16",
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "noUnusedLocals": true,
-    "declaration": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "strictPropertyInitialization": false,
-    "esModuleInterop": true
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@src/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "test", "*test.ts"]
+  "include": ["src/**/*", "eslintrc.config.js"]
 }

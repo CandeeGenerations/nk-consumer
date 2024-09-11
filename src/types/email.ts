@@ -1,4 +1,4 @@
-import {S3Message} from './consumer.js'
+import {S3Message} from './consumer'
 
 export interface SendEmailMessage extends S3Message {
   emailType: string

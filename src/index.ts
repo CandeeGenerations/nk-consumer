@@ -1,15 +1,14 @@
 import express from 'express'
 import fs from 'fs'
 import path from 'path'
-import {fileURLToPath} from 'url'
-import config from './common/config.js'
-import {startConsumer} from './consumer.js'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+import config from './common/config'
+import {startConsumer} from './consumer'
+
 const app = express()
 const port = config.port
 const sep = ' -------------------------------------'
+// eslint-disable-next-line no-undef
 const pjson = JSON.parse(fs.readFileSync(path.join(__dirname, '../', 'package.json'), 'utf8'))
 
 app.use(express.json())
