@@ -1,5 +1,5 @@
-import config from '@/src/common/config'
 import {SESClient} from '@aws-sdk/client-ses'
+import config from '@src/common/config'
 
 let _client: SESClient | null = null
 
