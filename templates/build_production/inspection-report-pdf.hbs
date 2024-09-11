@@ -1,252 +1,159 @@
-<html lang='en' style='-webkit-print-color-adjust: exact;'>
-  <head>
-    <meta charset='utf-8' />
-    <meta name='x-apple-disable-message-reformatting' />
-    <meta content='ie=edge' http-equiv='x-ua-compatible' />
-    <meta content='width=device-width, initial-scale=1' name='viewport' />
-    <meta content='telephone=no, date=no, address=no, email=no' name='format-detection' />
-    <link href='https://fonts.googleapis.com' rel='preconnect' />
-    <link crossorigin href='https://fonts.gstatic.com' rel='preconnect' />
-    <link
-      href='https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap'
-      rel='stylesheet'
-    />
-    <link
-      href='https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
-      rel='stylesheet'
-    />
-    <title>{{title}} - NK Installations</title>
-    <style>
-      html { -webkit-print-color-adjust: exact; }
-    </style>
-  </head>
-  <body
-    style="margin: 0px; background-color: #fff; font-family: Noto Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; word-break: break-word; -webkit-font-smoothing: antialiased; color: #666666"
-  >
-    <div style='margin-left: auto; margin-right: auto; max-width: 56rem; border-radius: 0.5rem; background-color: #fff'>
-      <table style='min-width: 100%; background-color: #eaecf9' cellpadding='0' cellspacing='0' role='none'>
-        <tbody>
-          <tr>
-            <td style='padding-top: 1.25rem; text-align: center'>
-              <a href='https://nkinstallations.com' target='_blank'>
-                <img
-                  alt='NK Installations'
-                  src='https://nkinstallations.com/wp-content/uploads/2024/01/NK-Installations.png'
-                  style='margin-left: auto; margin-right: auto; display: inline; width: 24rem; border-width: 0px'
-                />
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td style='padding-bottom: 1.25rem; padding-top: 0.5rem; text-align: center'>
-              <h1
-                style='margin-bottom: 1rem; font-size: 1.5rem; line-height: 2rem; font-weight: 700; color: #000'
-              >Inspection Report Form</h1>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <table
-        style='margin-bottom: 1.5rem; margin-top: 1.25rem; min-width: 100%; border-collapse: collapse; border-width: 1px; border-color: #d1d5db'
-        cellpadding='0'
-        cellspacing='0'
-        role='none'
-      >
-        <tbody>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600; width: 400px'
-            >
-              Inspector Name (Tec: full name OR<br />installer: first name & crew number<br />in last name box)
-            </td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem'
-            >{{inspectorName}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Customer Name</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{customerName}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Project Number</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{projectNumber}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Original Installer Name</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{originalInstallerName}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Original Installer Crew Number</td>
-            <td style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'>
-              {{#if originalInstallerCrewNumber}} {{originalInstallerCrewNumber}} {{else}}
-                <em>Not provided</em>
-              {{/if}}
-            </td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Original Install Date</td>
-            <td style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'>
-              {{#if originalInstallDate}} {{originalInstallDate}} {{else}} <em>Not provided</em> {{/if}}
-            </td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Inspection / Repair Date</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{inspectionRepairDate}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Hours to Fix</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{hoursToFix}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Description of the Problem</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{problemDescription}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Description of the Work Performed Today</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{workPerformedTodayDescription}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Description of the Future Solution</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{futureSolutionDescription}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Materials Needed for Future Visit</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{materialsNeededForFutureVisit}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Installer Error?</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{installerError}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Manufacturer Problem?</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{manufacturerProblem}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Lowes Problem?</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{lowesProblem}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Future Visit Needed?</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{futureVisitNeeded}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Were Materials Purchased?</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{materialsPurchased}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Back Charge Materials?</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{backChargeMaterials}}</td>
-          </tr>
-          <tr>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;'
-            >Customer Concern/Request?</td>
-            <td
-              style='border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;'
-            >{{customerConcernRequest}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table cellpadding='0' cellspacing='0' role='none'>
-        <tbody>
-          <tr>
-            <td style='padding: 0.5rem 2.5rem'>
-              <h2
-                style='margin-top: 1rem; margin-bottom: 1rem; font-size: 1.25rem; line-height: 1.75rem; font-weight: 700'
-              >Inspection Pictures</h2>
-            </td>
-          </tr>
-          <tr>
-            <td style='padding: 2.5rem'>
-              {{#each pictureUrls}}
-                <img src='{{this}}' style='max-width: 100%' alt='' />
-              {{/each}}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <table cellpadding='0' cellspacing='0' role='none'>
-        <tbody>
-          <tr>
-            <td style='padding: 0.5rem 2.5rem;'>
-              <h2
-                style='margin-top: 1rem; margin-bottom: 1rem; font-size: 1.25rem; line-height: 1.75rem; font-weight: 700;'
-              >Receipts</h2>
-            </td>
-          </tr>
-          <tr>
-            <td style='padding-left: 2.5rem; padding-right: 2.5rem;'>
-              {{#each receiptUrls}}
-                <img src='{{this}}' style='max-width: 100%;' alt='' />
-              {{/each}}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </body>
+<!DOCTYPE html>
+<html lang="en" style="-webkit-print-color-adjust: exact;">
+<head>
+  <meta charset="utf-8">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="telephone=no, date=no, address=no, email=no" name="format-detection">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>{{title}} - NK Installations</title>
+  <style>
+    html {
+      -webkit-print-color-adjust: exact;
+    }
+  </style>
+</head>
+<body style="margin: 0px; background-color: #fff; font-family: Noto Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; word-break: break-word; -webkit-font-smoothing: antialiased; color: #666666">
+  <div style="margin-left: auto; margin-right: auto; max-width: 56rem; border-radius: 0.5rem; background-color: #fff">
+    <table style="min-width: 100%; background-color: #eaecf9" cellpadding="0" cellspacing="0" role="none">
+      <tbody>
+        <tr>
+          <td style="padding-top: 1.25rem; text-align: center">
+            <a href="https://nkinstallations.com" target="_blank">
+              <img alt="NK Installations" src="https://nkinstallations.com/wp-content/uploads/2024/01/NK-Installations.png" style="margin-left: auto; margin-right: auto; display: inline; width: 24rem; border-width: 0px">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 1.25rem; padding-top: 0.5rem; text-align: center">
+            <h1 style="margin-bottom: 1rem; font-size: 1.5rem; line-height: 2rem; font-weight: 700; color: #000">Inspection Report Form</h1>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="margin-bottom: 1.5rem; margin-top: 1.25rem; min-width: 100%; border-collapse: collapse; border-width: 1px; border-color: #d1d5db" cellpadding="0" cellspacing="0" role="none">
+      <tbody>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600; width: 400px">
+            Inspector Name (Tec: full name OR<br>installer: first name & crew number<br>in last name box)
+          </td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem">{{inspectorName}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Customer Name</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{customerName}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Project Number</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{projectNumber}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Original Installer Name</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{originalInstallerName}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Original Installer Crew Number</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">
+            {{#if originalInstallerCrewNumber}} {{originalInstallerCrewNumber}} {{else}}
+            <em>Not provided</em> {{/if}}
+          </td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Original Install Date</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">
+            {{#if originalInstallDate}} {{originalInstallDate}} {{else}} <em>Not provided</em> {{/if}}
+          </td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Inspection / Repair Date</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{inspectionRepairDate}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Hours to Fix</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{hoursToFix}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Description of the Problem</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{problemDescription}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Description of the Work Performed Today</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{workPerformedTodayDescription}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Description of the Future Solution</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{futureSolutionDescription}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Materials Needed for Future Visit</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{materialsNeededForFutureVisit}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Installer Error?</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{installerError}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Manufacturer Problem?</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{manufacturerProblem}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Lowes Problem?</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{lowesProblem}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Future Visit Needed?</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{futureVisitNeeded}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Were Materials Purchased?</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{materialsPurchased}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Back Charge Materials?</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{backChargeMaterials}}</td>
+        </tr>
+        <tr>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 0.5rem 0.5rem 2.5rem; font-weight: 600;">Customer Concern/Request?</td>
+          <td style="border-width: 1px; border-color: #d1d5db; padding: 0.5rem 2.5rem 0.5rem 0.5rem;">{{customerConcernRequest}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <table cellpadding="0" cellspacing="0" role="none">
+      <tbody>
+        <tr>
+          <td style="padding: 0.5rem 2.5rem">
+            <h2 style="margin-top: 1rem; margin-bottom: 1rem; font-size: 1.25rem; line-height: 1.75rem; font-weight: 700">Inspection Pictures</h2>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 2.5rem">
+            {{#each pictureUrls}}
+            <img src="{{this}}" style="max-width: 100%" alt="">
+            {{/each}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table cellpadding="0" cellspacing="0" role="none">
+      <tbody>
+        <tr>
+          <td style="padding: 0.5rem 2.5rem;">
+            <h2 style="margin-top: 1rem; margin-bottom: 1rem; font-size: 1.25rem; line-height: 1.75rem; font-weight: 700;">Receipts</h2>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-left: 2.5rem; padding-right: 2.5rem;">
+            {{#each receiptUrls}}
+            <img src="{{this}}" style="max-width: 100%;" alt="">
+            {{/each}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
 </html>
