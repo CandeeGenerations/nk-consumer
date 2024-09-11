@@ -6,10 +6,6 @@ export default {
     siteUrl: process.env.SITE_URL || 'http://localhost:7700',
     overrideSendList: process.env.OVERRIDE_SEND_LIST || true,
   },
-  freeConvert: {
-    url: process.env.FREE_CONVERT_URL,
-    apiKey: process.env.FREE_CONVERT_API_KEY,
-  },
   aws: {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
