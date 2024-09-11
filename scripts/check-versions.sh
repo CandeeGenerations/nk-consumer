@@ -84,8 +84,3 @@ check_and_echo_version_requirement() {
 node_version_required=$(jq -r '.engines.node // empty' package.json) # Extract version requirements from package.json
 current_node_version=$(node -v | sed 's/v//') # Get current versions
 check_and_echo_version_requirement "Node" "$current_node_version" "$node_version_required"
-
-# Check Yarn version - Not needed since the engines field in package.json blocks install if the wrong Yarn version is installed
-# yarn_version_required=$(jq -r '.yarn.version // empty' package.json) # Extract version requirements from package.json
-# current_yarn_version=$(yarn --version) # Get current versions
-# check_and_echo_version_requirement "Yarn" "$current_yarn_version" "$yarn_version_required"
