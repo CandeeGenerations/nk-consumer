@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/CandeeGenerations/nk-consumer/compare/v1.2.2...v1.2.3) (2024-09-11)
+
+
+### Bug Fixes
+
+* fixed issue with long descriptions in templates ([79abe4b](https://github.com/CandeeGenerations/nk-consumer/commit/79abe4bad6f40f44652d9ce5481c877bae8be7bb))
+* migrations ([2ffef04](https://github.com/CandeeGenerations/nk-consumer/commit/2ffef044b09c6f40c53fcc370c65265025965f1b))
+
 ### [1.2.2](https://github.com/CandeeGenerations/nk-consumer/compare/v1.2.1...v1.2.2) (2024-09-11)
 
 ### Bug Fixes
