@@ -1,6 +1,7 @@
 {
   "name": "nk-consumer",
   "version": "1.2.3",
+  "private": true,
   "description": "NK Tools Consumer",
   "homepage": "https://github.com/CandeeGenerations/nk-consumer#readme",
   "bugs": {
@@ -17,9 +18,9 @@
   "scripts": {
     "build": "rm -rf dist && NODE_ENV=production tsc && tsc-alias",
     "eslint": "eslint 'src/**/*.ts'",
-    "fix": "yarn run eslint && yarn run prettier --cache",
-    "preinstall": "sh scripts/check-versions.sh && npx only-allow yarn",
-    "install:all": "fnm use; yarn install;",
+    "fix": "pnpm run eslint && pnpm run prettier --cache",
+    "preinstall": "sh scripts/check-versions.sh && npx only-allow pnpm",
+    "install:all": "fnm use; pnpm install;",
     "prepare": "husky install",
     "prettier": "prettier 'src/**/*.ts' --cache --check --write --ignore-unknown .",
     "prettier:ci": "prettier 'src/**/*.ts' --check .",
@@ -59,9 +60,9 @@
     "typescript": "^5.6.2",
     "typescript-eslint": "^8.5.0"
   },
-  "packageManager": "yarn@4.4.1",
+  "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c",
   "engines": {
     "node": ">=20.0.0",
-    "yarn": ">=4.0.0"
+    "pnpm": ">=9.0.0"
   }
 }
