@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/CandeeGenerations/nk-consumer/compare/v1.2.1...v1.2.2) (2024-09-11)
+
+
+### Bug Fixes
+
+* package updates ([ca00946](https://github.com/CandeeGenerations/nk-consumer/commit/ca0094680da247997330952db8d3fca371bc21c3))
+* removed image processing ([2d8ecd8](https://github.com/CandeeGenerations/nk-consumer/commit/2d8ecd8755f4c3c431ba9d6a1d16e23c5996e2ec))
+
 ### [1.2.1](https://github.com/CandeeGenerations/nk-consumer/compare/v1.2.0...v1.2.1) (2024-09-04)
 
 
