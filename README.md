@@ -2,7 +2,7 @@
 
 [![Validate Branch](https://github.com/CandeeGenerations/nk-consumer/actions/workflows/validate-branch.yml/badge.svg)](https://github.com/CandeeGenerations/nk-consumer/actions/workflows/validate-branch.yml)
 
-Consumes messages from SQS and executes actions based on the message type (sends emails, etc.). Testing
+Consumes messages from SQS and executes actions based on the message type (sends emails, etc.).
 
 ## Getting Started
 
