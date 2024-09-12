@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: Check out code
         id: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Read node from package.json
         uses: culshaw/read-package-node-version-actions@v1
@@ -47,7 +47,7 @@ jobs:
 
       - name: Configure AWS credentials
         id: log-into-aws
-        uses: aws-actions/configure-aws-credentials@v1-node16
+        uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
           aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
@@ -55,7 +55,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: log-into-ecr
-        uses: aws-actions/amazon-ecr-login@v1
+        uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build, tag, and push image to Amazon ECR
         env:
