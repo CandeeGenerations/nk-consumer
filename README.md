@@ -10,6 +10,7 @@ Consumes messages from SQS and executes actions based on the message type (sends
 
 - Node.js 20.x
 - PNPM 9.x
+- [Doppler](https://docs.doppler.com/docs/install-cli)
 
 ### Local Setup
 
