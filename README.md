@@ -1,6 +1,6 @@
 # NK Consumer
 
-[![Validate Branch](https://github.com/CandeeGenerations/nk-consumer/actions/workflows/validate-branch.yml/badge.svg)](https://github.com/CandeeGenerations/nk-consumer/actions/workflows/validate-branch.yml)
+[![Validate Branch](https://github.com/CandeeGenerations/nk-consumer/actions/workflows/validate-branch.yaml/badge.svg)](https://github.com/CandeeGenerations/nk-consumer/actions/workflows/validate-branch.yaml)
 
 Consumes messages from SQS and executes actions based on the message type (sends emails, etc.).
 
