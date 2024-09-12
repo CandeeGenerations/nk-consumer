@@ -1,25 +1,26 @@
 import {SendRawEmailCommand} from '@aws-sdk/client-ses'
-import uniq from 'lodash/uniq.js'
-import {createMimeMessage, Mailbox} from 'mimetext'
+import config from '@src/common/config'
+import {OVERRIDE_EMAIL} from '@src/common/constants'
+import {logError, logInfo} from '@src/common/logger'
+import uniq from 'lodash/uniq'
+import {Mailbox, createMimeMessage} from 'mimetext'
 import {Buffer} from 'node:buffer'
-import config from '../../../common/config.js'
-import {OVERRIDE_EMAIL} from '../../../common/constants.js'
-import {logError, logInfo} from '../../../common/logger.js'
-import getClient from './getClient.js'
 
-const sendEmail = async data => {
+import getClient from './getClient'
+
+const sendEmail = async (data) => {
   const ses = getClient()
   const {overrideSendList} = config.email
 
   const toList =
-    overrideSendList === 'true' ? [OVERRIDE_EMAIL] : (uniq(data.to?.split(',').filter(x => x !== '')) as string[])
+    overrideSendList === 'true' ? [OVERRIDE_EMAIL] : (uniq(data.to?.split(',').filter((x) => x !== '')) as string[])
 
   if (toList.length === 0) {
     logError('No one to send email to')
     return
   }
 
-  logInfo(`Sending email to ${toList.map(x => x).join(',')}...`)
+  logInfo(`Sending email to ${toList.map((x) => x).join(',')}...`)
 
   const message = createMimeMessage()
 
@@ -32,11 +33,11 @@ const sendEmail = async data => {
   })
 
   if (data.attachments) {
-    data.attachments.forEach(x => message.addAttachment(x))
+    data.attachments.forEach((x) => message.addAttachment(x))
   }
 
   const command = new SendRawEmailCommand({
-    Destinations: ((message.getRecipients({type: 'To'}) || []) as Mailbox[]).map(mailbox => mailbox.addr),
+    Destinations: ((message.getRecipients({type: 'To'}) || []) as Mailbox[]).map((mailbox) => mailbox.addr),
     RawMessage: {
       Data: Buffer.from(message.asRaw(), 'utf8'),
     },
@@ -46,7 +47,7 @@ const sendEmail = async data => {
   try {
     await ses.send(command)
 
-    logInfo(`Email sent to ${toList.map(x => x).join(',')} from ${data.from?.email || ''}: [subject] ${data.subject}`)
+    logInfo(`Email sent to ${toList.map((x) => x).join(',')} from ${data.from?.email || ''}: [subject] ${data.subject}`)
   } catch (error) {
     logError('Error sending email', error)
   }

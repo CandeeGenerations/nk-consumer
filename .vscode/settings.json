@@ -1,5 +1,5 @@
 {
-  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "shortest",
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.removeUnusedImports": "explicit",

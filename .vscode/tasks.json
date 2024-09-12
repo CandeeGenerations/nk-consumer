@@ -30,7 +30,7 @@
     {
       "type": "shell",
       "label": "Build Templates",
-      "command": "sh generate-templates.sh",
+      "command": "sh scripts/generate-templates.sh",
       "problemMatcher": []
     }
   ]

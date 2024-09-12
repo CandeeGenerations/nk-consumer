@@ -1,5 +1,5 @@
-import deleteObject from './functions/deleteObject.js'
-import getObject from './functions/getObject.js'
-import listObjects from './functions/listObjects.js'
+import deleteObject from './functions/deleteObject'
+import getObject from './functions/getObject'
+import listObjects from './functions/listObjects'
 
 export {deleteObject, getObject, listObjects}

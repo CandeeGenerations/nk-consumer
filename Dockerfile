@@ -7,9 +7,12 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-COPY package.json yarn.lock .yarnrc.yml ./
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
-RUN corepack enable && yarn install
+COPY package.json ./
+RUN pnpm install --ignore-scripts
 
 # BUILDER
 FROM base AS builder
@@ -19,7 +22,11 @@ WORKDIR /app
 COPY --from=deps /app/node_modules node_modules
 COPY . .
 
-RUN corepack enable && yarn build
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+RUN pnpm build
 
 # RUNNER
 FROM node:20-slim AS runner
