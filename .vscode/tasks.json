@@ -8,9 +8,15 @@
         "color": "terminal.ansiRed",
         "id": "server"
       },
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "panel": "new",
+        "group": "nk-tools"
+      },
       "problemMatcher": [],
       "label": "Start Consumer",
-      "detail": "doppler run --command='NODE_ENV=development tsc-watch -p tsconfig.build.json --onSuccess \"node dist/index.js\"'"
+      "detail": "fnm use; doppler run --command='NODE_ENV=development tsc-watch -p tsconfig.build.json --onSuccess \"node dist/index.js\"'"
     },
     {
       "type": "npm",

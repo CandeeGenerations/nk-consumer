@@ -25,7 +25,7 @@
     "prettier": "prettier --cache --check --write --ignore-unknown .",
     "prettier:ci": "prettier --check .",
     "release": "standard-version -a -- --release-as minor",
-    "start": "doppler run --command='NODE_ENV=development ts-node-dev --respawn -r tsconfig-paths/register src/index.ts'"
+    "start": "fnm use; doppler run --command='NODE_ENV=development ts-node-dev --respawn -r tsconfig-paths/register src/index.ts'"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.650.0",
