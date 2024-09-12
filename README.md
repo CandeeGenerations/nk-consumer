@@ -15,30 +15,30 @@ Consumes messages from SQS and executes actions based on the message type (sends
 ### Local Setup
 
 1. Check if you have corepack:
-    ```sh
-    corepack -v
-    ```
+   ```sh
+   corepack -v
+   ```
 1. If not, install it:
-    ```sh
-    brew install corepack
-    ```
+   ```sh
+   brew install corepack
+   ```
 1. Enable pnpm
-    ```sh
-    corepack enable pnpm
-    ```
+   ```sh
+   corepack enable pnpm
+   ```
 1. Install pnpm
-    ```sh
-    corepack use pnpm
-    ```
+   ```sh
+   corepack use pnpm
+   ```
 1. Install project dependencies
-    ```sh
-    pnpm install
-    ```
+   ```sh
+   pnpm install
+   ```
 1. Configure Doppler:
-    ```sh
-    doppler setup
-    ```
+   ```sh
+   doppler setup
+   ```
 1. Start the service:
-    ```sh
-    pnpm run start
-    ```
+   ```sh
+   pnpm run start
+   ```
