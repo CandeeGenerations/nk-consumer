@@ -21,9 +21,9 @@
     "fix": "pnpm run eslint && pnpm run prettier --cache",
     "preinstall": "sh scripts/check-versions.sh && npx only-allow pnpm",
     "install:all": "fnm use; pnpm install;",
-    "prepare": "husky install",
-    "prettier": "prettier 'src/**/*.ts' --cache --check --write --ignore-unknown .",
-    "prettier:ci": "prettier 'src/**/*.ts' --check .",
+    "prepare": "husky",
+    "prettier": "prettier --cache --check --write --ignore-unknown .",
+    "prettier:ci": "prettier --check .",
     "release": "standard-version -a -- --release-as minor",
     "start": "doppler run --command='NODE_ENV=development ts-node-dev --respawn -r tsconfig-paths/register src/index.ts'"
   },
