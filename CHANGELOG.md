@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.4](https://github.com/CandeeGenerations/nk-consumer/compare/v1.2.3...v1.2.4) (2024-09-13)
+
+### Bug Fixes
+
+- package updates ([7f233dc](https://github.com/CandeeGenerations/nk-consumer/commit/7f233dc8e2c49c405be7acccfd3ff7cbc72e662f))
+
 ### [1.2.3](https://github.com/CandeeGenerations/nk-consumer/compare/v1.2.2...v1.2.3) (2024-09-11)
 
 ### Bug Fixes
