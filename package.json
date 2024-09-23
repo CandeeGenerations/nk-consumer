@@ -28,26 +28,26 @@
     "start": "doppler run --command='NODE_ENV=development ts-node-dev --respawn -r tsconfig-paths/register src/index.ts'"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.651.1",
-    "@aws-sdk/client-ses": "^3.651.1",
+    "@aws-sdk/client-s3": "^3.654.0",
+    "@aws-sdk/client-ses": "^3.654.0",
     "dayjs": "^1.11.13",
     "express": "^4.21.0",
     "handlebars": "^4.7.8",
     "lodash": "^4.17.21",
     "mimetext": "^3.0.24",
-    "puppeteer": "^23.3.0",
+    "puppeteer": "^23.4.0",
     "sqs-consumer": "^11.0.2",
     "winston": "^3.14.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
-    "@eslint/js": "^9.10.0",
+    "@eslint/js": "^9.11.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/express": "^4.17.21",
     "@types/lodash": "^4.17.7",
-    "@types/node": "^22.5.4",
-    "eslint": "^9.10.0",
+    "@types/node": "^22.5.5",
+    "eslint": "^9.11.0",
     "globals": "^15.9.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
@@ -58,7 +58,7 @@
     "tsc-alias": "^1.8.10",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.6.2",
-    "typescript-eslint": "^8.5.0"
+    "typescript-eslint": "^8.6.0"
   },
   "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c",
   "engines": {
