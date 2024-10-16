@@ -2,7 +2,6 @@ import dayjs from 'dayjs'
 import fs from 'fs'
 import handlebars from 'handlebars'
 import uniq from 'lodash/uniq'
-import {Buffer} from 'node:buffer'
 import path from 'path'
 import puppeteer from 'puppeteer'
 
@@ -171,7 +170,7 @@ const sendJobEventEmail = async ({to, replyTo, ...email}: IJobEventEmail) => {
   await storage.putObject({
     bucket: config.aws.reportsBucket,
     filename: `NKJobEventReport__${payload.customerName}__${payload.projectNumber}__${payload.jobEventType}__${payload.id}.pdf`,
-    data: Buffer.from(pdf).toString('base64'),
+    data: pdf,
   })
 
   const emailData = {
