@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/CandeeGenerations/nk-consumer/compare/v1.2.4...v1.3.0) (2024-10-16)
+
+### Features
+
+- added support for pdf urls for job events ([a0832a8](https://github.com/CandeeGenerations/nk-consumer/commit/a0832a80aad0f0da68c8d44c2c5e39fbe17c6ee0))
+- supported pdf urls for reports ([54a8ef6](https://github.com/CandeeGenerations/nk-consumer/commit/54a8ef6b294eff0eb6b2997c5967bdff923c31fe))
+
 ### [1.2.4](https://github.com/CandeeGenerations/nk-consumer/compare/v1.2.3...v1.2.4) (2024-09-13)
 
 ### Bug Fixes
