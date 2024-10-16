@@ -9,6 +9,12 @@
         "id": "server"
       },
       "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "panel": "new",
+        "group": "nk-tools"
+      },
       "label": "Start Consumer",
       "detail": "doppler run --command='NODE_ENV=development tsc-watch -p tsconfig.build.json --onSuccess \"node dist/index.js\"'"
     },

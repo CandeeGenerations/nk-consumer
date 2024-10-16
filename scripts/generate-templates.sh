@@ -9,7 +9,7 @@ fi
 
 # build templates
 cd ./templates
-yarn build
+pnpm run build
 cd ./build_production
 
 for f in *.html; do

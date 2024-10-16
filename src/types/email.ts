@@ -51,6 +51,7 @@ export interface IInspectionReportEmail extends IEmail {
   customerConcernRequest: string
   futureVisitNeeded: boolean
   materialsPurchased: boolean
+  pdfUrl: string
 }
 
 export interface IJobEventEmail extends IEmail {
@@ -74,6 +75,7 @@ export interface IJobEventEmail extends IEmail {
   dyeLotNumber?: string
   productName?: string
   detailerName?: string
+  pdfUrl: string
 }
 
 export interface ITripChargeEmail extends IEmail {

@@ -4,6 +4,11 @@
 
 Consumes messages from SQS and executes actions based on the message type (sends emails, etc.).
 
+```sh
+sudo lsof -i :7703
+sudo kill -9 20861
+```
+
 ## Getting Started
 
 ### Prerequisites

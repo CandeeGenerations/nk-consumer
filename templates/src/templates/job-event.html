@@ -67,10 +67,18 @@ ___#if itemNumber__<strong>Item number:</strong> ___itemNumber__ ___/if__ ___#if
         </tr>
 
         <tr>
-          <td class="pt-2 pb-6">
-            <a href="___siteUrl__/job-events/edit/___id__" rel="noreferrer noopener" target="_blank">
-              <component src="src/components/button.html">View report</component>
-            </a>
+          <td class="pt-2 pb-6 flex flex-row">
+            <div>
+              <a href="___siteUrl__/job-events/edit/___id__" rel="noreferrer noopener" target="_blank">
+                <component src="src/components/button.html">View report</component>
+              </a>
+            </div>
+
+            <div>
+              <a href="___pdfUrl__" rel="noreferrer noopener" target="_blank" class="ml-2">
+                <component src="src/components/button-outline.html">Download report</component>
+              </a>
+            </div>
           </td>
         </tr>
 

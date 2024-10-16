@@ -12,6 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <title>{{title}} - NK Installations</title>
   <style>
+    .hover-border-primary-900:hover {
+      border-color: #78350f !important
+    }
     .hover-bg-primary-900:hover {
       background-color: #78350f !important
     }
@@ -100,71 +103,13 @@
                         </tr>
                         <tr>
                           <td>
-                            <pre style="border-radius: 0.25rem; padding: 1rem; color: #666666; background-color: #f9fafc">
-<strong>Date created:</strong>  {{dateCreated}}
-
-<strong>Inspector name:</strong>  {{inspectorName}}
-
-<strong>Customer name:</strong>  {{customerName}}
-
-<strong>Project number:</strong>  {{projectNumber}}
-
-<strong>Original installer crew number:</strong> {{#if originalInstallerCrewNumber}} {{originalInstallerCrewNumber}} {{else}} <em>Not provided</em> {{/if}}
-
-<strong>Hours to fix:</strong> {{hoursToFix}}
-
-<strong>Original install date:</strong> {{#if originalInstallDate}} {{originalInstallDate}} {{else}} <em>Not provided</em> {{/if}}
-
-<strong>Inspection repair date:</strong> {{inspectionRepairDate}}
-            </pre>
-                            <pre style="border-radius: 0.25rem; padding: 1rem; color: #666666; background-color: #f9fafc; word-wrap: break-word; white-space: pre-wrap;">
-<strong>Problem description:</strong>
-
-{{problemDescription}}
-<br>
-
-<strong>Work performed today description:</strong>
-
-{{workPerformedTodayDescription}}
-<br>
-
-<strong>Future solution description:</strong>
-
-{{futureSolutionDescription}}
-<br>
-
-<strong>Materials needed for future visit:</strong>
-
-{{materialsNeededForFutureVisit}}
-              </pre>
-                            <pre style="border-radius: 0.25rem; padding: 1rem; color: #666666; background-color: #f9fafc;">
-<strong>Installer error:</strong> {{installerError}}
-
-<strong>Manufacturer problem:</strong> {{manufacturerProblem}}
-
-<strong>Lowes problem:</strong> {{lowesProblem}}
-
-<strong>Back charge materials:</strong> {{backChargeMaterials}}
-
-<strong>Customer concern request:</strong> {{customerConcernRequest}}
-
-<strong>Future visit needed:</strong> {{futureVisitNeeded}}
-
-<strong>Materials purchased:</strong> {{materialsPurchased}}
-
-<strong>Purchase location:</strong> {{#if purchaseLocation}} {{purchaseLocation}} {{else}} <em>Not provided</em> {{/if}}
-            </pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
                             <p style="color: #64748b;">You can view the full report online in the NK Tools:</p>
                           </td>
                         </tr>
                         <tr>
                           <td style="padding-bottom: 1.5rem; padding-top: 0.5rem">
                             <a href="{{siteUrl}}/inspection-reports/edit/{{id}}" rel="noreferrer noopener" target="_blank">
-                              <div class="hover-bg-primary-900 sm-w-auto" style="margin-top: 0.75rem; display: inline-block; cursor: pointer; border-radius: 0.25rem; border-width: 1px; border-color: transparent; background-color: #b45309; padding: 0.75rem 1.25rem; font-weight: 500; color: #fff; transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms">
+                              <div class="hover-bg-primary-900 hover-border-primary-900 sm-w-auto" style="margin-top: 0.75rem; display: inline-block; cursor: pointer; border-radius: 0.25rem; border: 1px solid #b45309; background-color: #b45309; padding: 0.75rem 1.25rem; font-weight: 500; color: #fff; transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms">
                                 View report
                               </div>
                             </a>

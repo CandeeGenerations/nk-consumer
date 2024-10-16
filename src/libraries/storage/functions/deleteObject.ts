@@ -2,7 +2,7 @@ import {DeleteObjectCommand} from '@aws-sdk/client-s3'
 
 import getClient from './getClient'
 
-const listObjects = async ({bucket, filename}: {bucket: string; filename: string}) => {
+const deleteObject = async ({bucket, filename}: {bucket: string; filename: string}) => {
   const client = getClient()
 
   const command = new DeleteObjectCommand({
@@ -13,4 +13,4 @@ const listObjects = async ({bucket, filename}: {bucket: string; filename: string
   await client.send(command)
 }
 
-export default listObjects
+export default deleteObject

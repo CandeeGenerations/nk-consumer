@@ -12,83 +12,28 @@ bodyClass: bg-gray-100
     >
       <table class="w-full">
         <tr>
-          <td>
-            <pre class="p-4 rounded" style="color: #666666; background-color: #f9fafc">
-<strong>Date created:</strong>  ___dateCreated__
-
-<strong>Inspector name:</strong>  ___inspectorName__
-
-<strong>Customer name:</strong>  ___customerName__
-
-<strong>Project number:</strong>  ___projectNumber__
-
-<strong>Original installer crew number:</strong> ___#if originalInstallerCrewNumber__ ___originalInstallerCrewNumber__ ___else__ <em>Not provided</em> ___/if__
-
-<strong>Hours to fix:</strong> ___hoursToFix__
-
-<strong>Original install date:</strong> ___#if originalInstallDate__ ___originalInstallDate__ ___else__ <em>Not provided</em> ___/if__
-
-<strong>Inspection repair date:</strong> ___inspectionRepairDate__
-            </pre>
-
-            <pre class="p-4 rounded" style="color: #666666; background-color: #f9fafc; word-wrap: break-word; white-space: pre-wrap;">
-<strong>Problem description:</strong>
-
-___problemDescription__
-<br />
-
-<strong>Work performed today description:</strong>
-
-___workPerformedTodayDescription__
-<br />
-
-<strong>Future solution description:</strong>
-
-___futureSolutionDescription__
-<br />
-
-<strong>Materials needed for future visit:</strong>
-
-___materialsNeededForFutureVisit__
-              </pre>
-
-            <pre class="p-4 rounded" style="color: #666666; background-color: #f9fafc">
-<strong>Installer error:</strong> ___installerError__
-
-<strong>Manufacturer problem:</strong> ___manufacturerProblem__
-
-<strong>Lowes problem:</strong> ___lowesProblem__
-
-<strong>Back charge materials:</strong> ___backChargeMaterials__
-
-<strong>Customer concern request:</strong> ___customerConcernRequest__
-
-<strong>Future visit needed:</strong> ___futureVisitNeeded__
-
-<strong>Materials purchased:</strong> ___materialsPurchased__
-
-<strong>Purchase location:</strong> ___#if purchaseLocation__ ___purchaseLocation__ ___else__ <em>Not provided</em> ___/if__
-            </pre>
+          <td colspan="2">
+            <p class="text-muted text-center">You can view the full report online in the NK Tools:</p>
           </td>
         </tr>
 
         <tr>
-          <td>
-            <p class="text-muted">You can view the full report online in the NK Tools:</p>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="pt-2 pb-6">
+          <td class="pt-2 pb-6 pr-2 text-right" style="width: 50%;">
             <a href="___siteUrl__/inspection-reports/edit/___id__" rel="noreferrer noopener" target="_blank">
               <component src="src/components/button.html">View report</component>
+            </a>
+          </td>
+
+          <td class="pt-2 pb-6 pl-2 text-left" style="width: 50%;">
+            <a href="___pdfUrl__" rel="noreferrer noopener" target="_blank">
+              <component src="src/components/button-outline.html">Download report</component>
             </a>
           </td>
         </tr>
 
         <tr>
-          <td>
-            <p class="text-muted text-sm">
+          <td colspan="2">
+            <p class="text-muted text-sm text-center">
               By clicking the link above, you will be redirected to the NK Tools application to view, modify, approve,
               or reject the report detailed above.
             </p>
