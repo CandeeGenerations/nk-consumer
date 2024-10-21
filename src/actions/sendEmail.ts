@@ -100,7 +100,7 @@ const sendInspectionReportApprovedEmail = async ({to, replyTo, approveEmails, ..
 
   await storage.putObject({
     bucket: config.aws.reportsBucket,
-    filename: `NKInspectionReport__${payload.customerName}__${payload.projectNumber}__${payload.id}.pdf`,
+    filename: payload.pdfUrl.split('/').pop(),
     data: pdf,
   })
 
@@ -169,7 +169,7 @@ const sendJobEventEmail = async ({to, replyTo, ...email}: IJobEventEmail) => {
 
   await storage.putObject({
     bucket: config.aws.reportsBucket,
-    filename: `NKJobEventReport__${payload.customerName}__${payload.projectNumber}__${payload.jobEventType}__${payload.id}.pdf`,
+    filename: payload.pdfUrl.split('/').pop(),
     data: pdf,
   })
 
