@@ -28,8 +28,8 @@
     "start": "doppler run --command='NODE_ENV=development ts-node-dev --respawn -r tsconfig-paths/register src/index.ts'"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.675.0",
-    "@aws-sdk/client-ses": "^3.675.0",
+    "@aws-sdk/client-s3": "^3.679.0",
+    "@aws-sdk/client-ses": "^3.679.0",
     "dayjs": "^1.11.13",
     "express": "^4.21.1",
     "handlebars": "^4.7.8",
@@ -46,7 +46,7 @@
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/express": "^5.0.0",
     "@types/lodash": "^4.17.12",
-    "@types/node": "^22.7.7",
+    "@types/node": "^22.8.1",
     "eslint": "^9.13.0",
     "globals": "^15.11.0",
     "husky": "^9.1.6",
@@ -58,7 +58,7 @@
     "tsc-alias": "^1.8.10",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.6.3",
-    "typescript-eslint": "^8.10.0"
+    "typescript-eslint": "^8.11.0"
   },
   "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c",
   "engines": {
