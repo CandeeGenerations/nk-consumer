@@ -14,6 +14,7 @@ export default {
     originalImagesBucket: process.env.ORIGINAL_IMAGES_BUCKET || '',
     sqsUrl: process.env.SQS_URL || '',
     sqsBucket: process.env.SQS_BUCKET || '',
+    reportsBucket: process.env.S3_REPORTS_BUCKET || '',
   },
   port: process.env.PORT || 7702,
   env: process.env.NODE_ENV || 'development',

@@ -15,6 +15,12 @@
         "group": "nk-tools"
       },
       "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "panel": "new",
+        "group": "nk-tools"
+      },
       "label": "Start Consumer",
       "detail": "fnm use; doppler run --command='NODE_ENV=development tsc-watch -p tsconfig.build.json --onSuccess \"node dist/index.js\"'"
     },

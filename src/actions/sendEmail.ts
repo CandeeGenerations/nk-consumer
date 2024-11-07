@@ -2,7 +2,6 @@ import dayjs from 'dayjs'
 import fs from 'fs'
 import handlebars from 'handlebars'
 import uniq from 'lodash/uniq'
-import {Buffer} from 'node:buffer'
 import path from 'path'
 import puppeteer from 'puppeteer'
 
@@ -99,6 +98,12 @@ const sendInspectionReportApprovedEmail = async ({to, replyTo, approveEmails, ..
   await page.setContent(pdfHtml)
   const pdf = await page.pdf(PDF_OPTIONS)
 
+  await storage.putObject({
+    bucket: config.aws.reportsBucket,
+    filename: payload.pdfUrl.split('/').pop(),
+    data: pdf,
+  })
+
   const emailData = {
     to,
     replyToList: getReplyToList(replyTo),
@@ -108,13 +113,6 @@ const sendInspectionReportApprovedEmail = async ({to, replyTo, approveEmails, ..
     },
     subject: 'APPROVED: Inspection Report Approved',
     html: compileEmail('inspection-report-approved')(payload),
-    attachments: [
-      {
-        filename: `${payload.originalInstallerName}__${payload.projectNumber}__${payload.customerName}__${payload.id}.pdf`,
-        data: Buffer.from(pdf).toString('base64'),
-        contentType: 'application/pdf',
-      },
-    ],
   }
 
   await sendEmail(emailData)
@@ -123,7 +121,7 @@ const sendInspectionReportApprovedEmail = async ({to, replyTo, approveEmails, ..
     return await sendEmail({
       ...emailData,
       to: approveEmails,
-      subject: `NK Inspection Report Form PDF -- ${payload.originalInstallerCrewNumber}`,
+      subject: `NK Inspection Report Approved - ${payload.customerName} - ${payload.projectNumber}`,
     })
   }
 }
@@ -169,6 +167,12 @@ const sendJobEventEmail = async ({to, replyTo, ...email}: IJobEventEmail) => {
   await page.setContent(pdfHtml)
   const pdf = await page.pdf(PDF_OPTIONS)
 
+  await storage.putObject({
+    bucket: config.aws.reportsBucket,
+    filename: payload.pdfUrl.split('/').pop(),
+    data: pdf,
+  })
+
   const emailData = {
     to,
     replyToList: getReplyToList(replyTo),
@@ -178,13 +182,6 @@ const sendJobEventEmail = async ({to, replyTo, ...email}: IJobEventEmail) => {
     },
     subject: title,
     html: compileEmail('job-event')(payload),
-    attachments: [
-      {
-        filename: `${email.customerName}_${email.projectNumber}_${email.jobEventType}.pdf`,
-        data: Buffer.from(pdf).toString('base64'),
-        contentType: 'application/pdf',
-      },
-    ],
   }
 
   await sendEmail(emailData)
