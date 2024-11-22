@@ -10,7 +10,14 @@ export default [
     rules: {
       '@typescript-eslint/no-parameter-properties': 0,
       '@typescript-eslint/ban-types': 0,
-
+      '@typescript-eslint/no-unused-expressions': [
+        'error',
+        {
+          allowShortCircuit: true,
+          allowTernary: true,
+          allowTaggedTemplates: true,
+        },
+      ],
       'no-extra-semi': 0,
       'no-undef': 2,
       'prefer-const': 1,
