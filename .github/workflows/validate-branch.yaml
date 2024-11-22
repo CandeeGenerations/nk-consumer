@@ -16,7 +16,7 @@ jobs:
       - name: Install deps
         run: pnpm install --ignore-scripts
       - name: Run Prettier
-        run: pnpm prettier:ci
+        run: pnpm run prettier:ci
   lint:
     name: Run Linting
     runs-on: ubuntu-latest
@@ -31,4 +31,4 @@ jobs:
       - name: Install deps
         run: pnpm install --ignore-scripts
       - name: Run ESLint
-        run: pnpm eslint
+        run: pnpm run eslint
